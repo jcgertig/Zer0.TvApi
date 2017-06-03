@@ -9,7 +9,8 @@ router.get('/', function(req, res, next) {
     limit: 10,
     fields: [
       'name',
-      'image'
+      'image',
+      'id'
     ],
     filters: [
       { field: 'name', value: req.query.query },
