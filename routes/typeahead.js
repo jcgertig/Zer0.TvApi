@@ -18,7 +18,7 @@ router.get('/', function(req, res, next) {
     ]*/
   };
 
-  gb.games.search(req.query.query, (err, val, body) => {
+  gb.games.search(req.query.query, config, (err, val, body) => {
     res.send(body.results);
   });
 });
