@@ -12,13 +12,13 @@ router.get('/', function(req, res, next) {
       'image',
       'id'
     ],
-    filters: [
+    /*filters: [
       { field: 'name', value: req.query.query },
       { field: 'aliases', value: req.query.query }
-    ]
+    ]*/
   };
 
-  gb.games.list(config, (err, val, body) => {
+  gb.games.search(req.query.query, (err, val, body) => {
     res.send(body.results);
   });
 });
