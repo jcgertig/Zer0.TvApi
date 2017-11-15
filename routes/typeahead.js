@@ -4,12 +4,6 @@ const router = express.Router();
 const gb = giantbomb('8e921245e839d8a5591c97fbf3210633a8d58f39');
 
 /* GET type ahead api. */
-router.use(function(req, res, next) {
-  res.header("Access-Control-Allow-Origin", "*");
-  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
-  next();
-});
-
 router.get('/', function(req, res, next) {
   const config = {
     limit: 10,

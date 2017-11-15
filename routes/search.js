@@ -14,6 +14,7 @@ function getTwitchStreams(gameTitle) {
 }
 
 /* GET search api. */
+
 router.get('/', function(req, res, next) {
   const gameTitle = req.query.query;
   Promise.all([

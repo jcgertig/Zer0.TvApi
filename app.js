@@ -1,5 +1,6 @@
 var express = require('express');
 var path = require('path');
+var cors = require('cors');
 var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
@@ -9,11 +10,7 @@ var routes = require('./routes/index');
 
 var app = express();
 
-app.use(function(req, res, next) {
-  res.header("Access-Control-Allow-Origin", "https://zer0.tv");
-  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
-  next();
-});
+app.use(cors());
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
